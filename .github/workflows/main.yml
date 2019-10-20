@@ -1,4 +1,4 @@
-name: Build
+name: Test and Build
 
 on: push
 
@@ -21,6 +21,7 @@ jobs:
         run: yarn tape
   publish-gpr:
     name: Publish to GPR
+    needs: build
     if: github.ref == 'master'
     runs-on: ubuntu-latest
     steps:
