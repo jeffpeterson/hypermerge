@@ -31,8 +31,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+          registry-url: 'https://npm.pkg.github.com'
           scope: '@jeffpeterson'
       - run: yarn install
       - run: yarn build
       - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
