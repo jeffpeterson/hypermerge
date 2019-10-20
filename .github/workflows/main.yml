@@ -35,4 +35,4 @@ jobs:
           scope: '@jeffpeterson'
       - run: yarn install
       - run: yarn build
-      - run: yarn publish
+      - run: npm publish
